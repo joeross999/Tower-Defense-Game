@@ -1,11 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameManager : Singleton<GameManager> {
 
 	[SerializeField]
+	private int totalWaves = 10;
+	[SerializeField]
+	private Text totalMoneyLbl;
+	[SerializeField]
+	private Text currentWaveLbl;
+	[SerializeField]
+	private Text playBtnLbl;
+	[SerializeField]
+	private Text totalEscapedLbl;
+	[SerializeField]
+	private Button playBtn;
+	[SerializeField]
 	private GameObject spawnPoint;
+	[SerializeField]
+	private Text textFieldChangeThisName;
 	[SerializeField]
 	private GameObject[] enemies;
 	[SerializeField]
@@ -16,10 +32,10 @@ public class GameManager : Singleton<GameManager> {
 	private int enemiesPerSpawn;
 	[SerializeField]
 	private float spawnDelay = 0.5f;
+	
 
+	
 	public List<Enemy> EnemyList = new List<Enemy>();
-
-
 	
 	
 
