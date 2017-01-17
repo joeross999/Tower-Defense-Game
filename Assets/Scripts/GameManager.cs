@@ -121,11 +121,4 @@ public class GameManager : Singleton<GameManager> {
 		playBtn.gameObject.SetActive(true);
 	}
 
-	// private void handleEscape(){
-	// 	if(Input.GetKeyDown(KeyCode.Escape)){
-	// 		TowerManager.Instance.disableDragSprite();
-	// 		TowerManager.Instance.towerBtnPressed = null;
-	// 	}
-	// }
-
 }
