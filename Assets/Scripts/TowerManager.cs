@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 
 public class TowerManager : Singleton<TowerManager> {
 
-	private TowerBtn towerBtnPressed;
+	public TowerBtn towerBtnPressed{get; set;}
+
 	private SpriteRenderer spriteRenderer;
 
 
@@ -23,6 +24,7 @@ public class TowerManager : Singleton<TowerManager> {
 		}
 		if(spriteRenderer.enabled){
 				followMouse();
+				handleEscape();
 			}
 	}
 
@@ -54,5 +56,12 @@ public class TowerManager : Singleton<TowerManager> {
 	public void disableDragSprite(){
 		spriteRenderer.enabled = false;
 		towerBtnPressed = null;
+	}
+
+	private void handleEscape(){
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			disableDragSprite();
+			towerBtnPressed = null;
+		}
 	}
 }

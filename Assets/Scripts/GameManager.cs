@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum gameStatus{
+	next, play, gameover, win
+}
 
 public class GameManager : Singleton<GameManager> {
 
@@ -33,15 +36,30 @@ public class GameManager : Singleton<GameManager> {
 	[SerializeField]
 	private float spawnDelay = 0.5f;
 	
+	private int waveNumber = 0;
+	private int totalMoney = 10;
+	private int totalEscaped = 0;
+	private int roundEscaped = 0;
+	private int totalkilled = 0;
+	private int whichEnemiesToSpawn = 0;
+	private gameStatus currentState = gameStatus.play;
 
-	
 	public List<Enemy> EnemyList = new List<Enemy>();
 	
-	
+	public int TotalMoney{
+		get{
+			return totalMoney;
+		}
+		set{
+			totalMoney = value;
+			totalMoneyLbl.text = totalMoney.ToString();
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine(spawn());
+		playBtn.gameObject.SetActive(false);
+		showMenu();
 	}
 	
 	
@@ -76,5 +94,38 @@ public class GameManager : Singleton<GameManager> {
 		EnemyList.Clear();
 	}
 
+	public void addMoney(int amount){
+		TotalMoney += amount;
+	}
+
+	public void subtractMoney (int amount){
+		TotalMoney += amount;
+	}
+
+	public void showMenu(){
+		switch(currentState){
+			case gameStatus.gameover:
+			playBtnLbl.text = "Play Again!";
+			//TODO add game over state
+			break;
+			case gameStatus.next:
+			playBtnLbl.text = "Next wave";
+			break;
+			case gameStatus.play:
+			playBtnLbl.text = "Play";
+			break;
+			case gameStatus.win:
+			playBtnLbl.text = "Play";
+			break;
+		}
+		playBtn.gameObject.SetActive(true);
+	}
+
+	// private void handleEscape(){
+	// 	if(Input.GetKeyDown(KeyCode.Escape)){
+	// 		TowerManager.Instance.disableDragSprite();
+	// 		TowerManager.Instance.towerBtnPressed = null;
+	// 	}
+	// }
 
 }

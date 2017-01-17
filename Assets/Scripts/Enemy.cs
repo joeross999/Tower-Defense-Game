@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour {
 	private float navigationUpdate;
 	[SerializeField]
 	private int healthPoints;
+	[SerializeField]
+	private int rewardAmt;
 
 	private Transform enemy;
 	private Collider2D enemyCollider;
@@ -81,6 +83,5 @@ public class Enemy : MonoBehaviour {
 	public void die(){
 		enemyCollider.enabled = false;
 		isDead = true;
-
 	}
 }
