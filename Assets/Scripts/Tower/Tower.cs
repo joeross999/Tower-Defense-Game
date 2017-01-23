@@ -72,7 +72,7 @@ public class Tower : MonoBehaviour {
 			yield return null;
 		}
 		if(projectile != null || targetEnemy == null){
-			Destroy(projectile);
+			Destroy(projectile.gameObject);
 		}
 	}
 
