@@ -1,0 +1,37 @@
+Mono path[0] = 'C:/Users/Joe/Documents/Unity/TowerDefense/Builds/Build02_Data/Managed'
+Mono path[1] = 'C:/Users/Joe/Documents/Unity/TowerDefense/Builds/Build02_Data/Mono'
+Mono config path = 'C:/Users/Joe/Documents/Unity/TowerDefense/Builds/Build02_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Joe/Documents/Unity/TowerDefense/Builds/Build02_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55144
+Multi-casting "[IP] 192.168.1.12 [Port] 55144 [Flags] 2 [Guid] 3433192400 [EditorId] 3907457564 [Version] 1048832 [Id] WindowsPlayer(Lenovo-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55144]
+PlayerConnection already initialized - listening to [0.0.0.0:55144]
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     1136 MB
+    Driver:   20.19.15.4531
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.076 seconds
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Joe\Documents\Unity\TowerDefense\Builds\Build02_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 3286x1090 at 0,-322
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.709300 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 413c -> priority: 1 

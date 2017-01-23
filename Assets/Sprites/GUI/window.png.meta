@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 9b90d51ab7b93304f9fba85a7368f65b
-timeCreated: 1484162645
+timeCreated: 1485203259
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: GameBanner
     21300002: StatsDisplay
+    21300004: ScoreWindow
+    21300006: GameOverWindow
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -116,6 +118,32 @@ TextureImporter:
         y: 4143
         width: 1178
         height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScoreWindow
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1310
+        width: 736
+        height: 752
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GameOverWindow
+      rect:
+        serializedVersion: 2
+        x: 3581
+        y: 5535
+        width: 826
+        height: 575
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

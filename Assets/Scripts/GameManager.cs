@@ -26,7 +26,7 @@ public class GameManager : Singleton<GameManager> {
 	[SerializeField]
 	private Text textFieldChangeThisName;
 	[SerializeField]
-	private GameObject[] enemies;
+	private Enemy[] enemies;
 	[SerializeField]
 	private int totalEnemies = 3;
 	[SerializeField]
@@ -39,9 +39,10 @@ public class GameManager : Singleton<GameManager> {
 	private int totalEscaped = 0;
 	private int roundEscaped = 0;
 	private int totalKilled = 0;
-	private int whichEnemiesToSpawn = 0;
+	private int EnemiesToSpawn = 0;
 	private int maxEscapedEnemies = 10;
 	private gameStatus currentState = gameStatus.play;
+	private AudioSource audioSource;
 
 	public List<Enemy> EnemyList = new List<Enemy>();
 	
@@ -82,9 +83,16 @@ public class GameManager : Singleton<GameManager> {
 		}
 	}
 
+	public AudioSource AudioSource {
+		get{
+			return audioSource;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		playBtn.gameObject.SetActive(false);
+		audioSource = GetComponent<AudioSource>();
 		showMenu();
 	}
 	
@@ -95,7 +103,7 @@ public class GameManager : Singleton<GameManager> {
 		if(enemiesPerSpawn > 0 && EnemyList.Count < totalEnemies){
 			for(int i = 0; i < enemiesPerSpawn; i++){
 				if(EnemyList.Count < totalEnemies){
-					GameObject newEnemy = Instantiate(enemies[whichEnemiesToSpawn]) as GameObject;
+					Enemy newEnemy = Instantiate(enemies[Random.Range(0, EnemiesToSpawn)]);
 					newEnemy.transform.position = spawnPoint.transform.position;
 				}
 			}
@@ -131,7 +139,9 @@ public class GameManager : Singleton<GameManager> {
 	public void isWaveOver(){
 		totalEscapedLbl.text = "Escaped " + TotalEscaped + "/" + maxEscapedEnemies;
 		if((roundEscaped +  totalKilled) == totalEnemies){
-
+			if(waveNumber <= enemies.Length){
+				EnemiesToSpawn = waveNumber;
+			}
 			setCurrentGameState();
 			showMenu();
 		}
@@ -153,7 +163,7 @@ public class GameManager : Singleton<GameManager> {
 		switch(currentState){
 			case gameStatus.gameover:
 			playBtnLbl.text = "Play Again!";
-			//TODO add game over state
+			AudioSource.PlayOneShot(SoundManager.Instance.Gameover);
 			break;
 			case gameStatus.next:
 			playBtnLbl.text = "Next wave";
@@ -178,11 +188,12 @@ public class GameManager : Singleton<GameManager> {
 				totalEnemies = 3;
 				totalEscaped = 0;
 				totalMoney = 10;
+				EnemiesToSpawn = 0;
 				TowerManager.Instance.DestroyAllTower();
 				TowerManager.Instance.RenameTagsBuildSites();
 				totalMoneyLbl.text = TotalMoney.ToString();
 				totalEscapedLbl.text = "Escaped " + TotalEscaped + "/" + maxEscapedEnemies;
-				//TODO finish resetting game
+				audioSource.PlayOneShot(SoundManager.Instance.NewGame);
 				break;
 		}
 		DestroyAllEnemies();
